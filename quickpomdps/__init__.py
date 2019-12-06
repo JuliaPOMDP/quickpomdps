@@ -5,10 +5,17 @@ import sys
 from julia import Main
 
 script_dir = os.path.dirname(os.path.realpath(__file__))
-Main.include(os.path.join(script_dir, "setup.jl"))
+try:
+    Main.include(os.path.join(script_dir, "setup.jl"))
 
-from julia.QuickPOMDPs import *
-from julia import POMDPs
+    from julia.QuickPOMDPs import *
+    from julia import POMDPs
+except Exception as e:
+    print(e)
+
+    print("!" * 10)
+    print("Try running quickpomdps.install() first!")
+    print("!" * 10)
 
 
 def install():

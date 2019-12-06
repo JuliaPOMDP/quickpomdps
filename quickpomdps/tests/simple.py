@@ -10,4 +10,8 @@ def test_basics():
     def R(s, a):
         return -1.0
 
-    prob = quickpomdps.DiscreteExplicitPOMDP(S,A,O,T,Z,R,γ)
+    S = ['l', 'r']
+    A = ['l', 'r']
+    O = ['l', 'r']
+    γ = 0.95
+    prob = quickpomdps.DiscreteExplicitPOMDP(S, A, O, T, Z, R, γ)
