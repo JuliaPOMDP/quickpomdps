@@ -1,11 +1,13 @@
 using PyCall
 
-function convert_pyobjects!(kwd::Dict)
-    for (k, v) in kwd
-        if v isa PyObject && pybuiltin("callable")(v)
-            kwd[k] = convert(Function, v)
-        end
+import QuickPOMDPs: preprocess
+
+function preprocess(v::PyObject)
+    if pybuiltin("callable")(v)
+        return convert(Function, v)
     end
+
+    return v
 end
 
 # TODO
