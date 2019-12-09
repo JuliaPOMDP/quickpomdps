@@ -18,6 +18,7 @@ setup(
     license='MIT',
     packages=find_packages(),
     install_requires=["julia>=0.2"],
+    test_requires=["pytest"],
     include_package_data=True,
     zip_safe=False,
     classifiers=[
