@@ -1,6 +1,5 @@
 # Tiger POMDP from Kaelbling et al. 98 (http://www.sciencedirect.com/science/article/pii/S000437029800023X)
-
-from julia.QuickPOMDPs import *
+import quickpomdps
 from julia.POMDPs import solve, pdf
 from julia.POMDPSimulators import stepthrough
 from julia.POMDPPolicies import RandomPolicy
@@ -34,7 +33,7 @@ def R(s, a):
         return 10.0
 
 def test_tiger_stepthrough():
-    m = DiscreteExplicitPOMDP(S,A,O,T,Z,R,γ)
+    m = quickpomdps.DiscreteExplicitPOMDP(S,A,O,T,Z,R,γ)
     policy = RandomPolicy(m)
     rsum = 0.0
     for step in stepthrough(m, policy, max_steps=10):
