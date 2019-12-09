@@ -5,7 +5,7 @@ def test_basics():
         return s == sp
 
     def Z(a, sp, o):
-        return 0.1
+        return 0.5
 
     def R(s, a):
         return -1.0
