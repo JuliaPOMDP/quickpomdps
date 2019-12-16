@@ -7,9 +7,13 @@ from julia import Main
 script_dir = os.path.dirname(os.path.realpath(__file__))
 try:
     Main.include(os.path.join(script_dir, "setup.jl"))
-
-    from julia.QuickPOMDPs import *
+    from julia.QuickPOMDPs import (DiscreteExplicitPOMDP,
+                                   DiscreteExplicitMDP,
+                                   QuickMDP,
+                                   QuickPOMDP,
+                                   MissingQuickArgument)
     from julia import POMDPs
+
 except Exception as e:
     print(e)
 
