@@ -1,0 +1,7 @@
+[deps]
+POMDPPolicies = "182e52fb-cfd0-5e46-8c26-fd0667c990f4"
+POMDPSimulators = "e0d0a172-29c6-5d4e-96d0-f262df5d01fd"
+POMDPs = "a93abf59-7444-517b-a68a-c42f96afdd7d"
+PyCall = "438e738f-606a-5dbb-bf0a-cddfbfd45ab0"
+QMDP = "3aa3ecc9-5a5d-57c8-8188-3e47bd8068d2"
+QuickPOMDPs = "8af83fb2-a731-493c-9049-9e19dbce6165"
