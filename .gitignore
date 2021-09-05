@@ -108,4 +108,4 @@ tests/Manifest.toml
 tests/Project.toml
 
 # poetry
-poetry.lcok
+poetry.lock

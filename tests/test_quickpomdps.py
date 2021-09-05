@@ -1,5 +1,4 @@
 import quickpomdps
-quickpomdps.install()
 
 from julia import Pkg
 Pkg.add("QMDP")

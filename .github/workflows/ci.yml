@@ -42,16 +42,13 @@ jobs:
       #----------------------------------------------
       - name: Install dependencies
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-        run: poetry install --no-interaction --no-root
-      #----------------------------------------------
-      # install your root project, if required
-      #----------------------------------------------
-      - name: Install library
         run: poetry install --no-interaction
       #----------------------------------------------
       #              run test suite
       #----------------------------------------------
       - name: Run tests
+        env:
+          JULIA_PROJECT: "./tests"
         run: |
           poetry run pytest --cov-report=xml
       #----------------------------------------------
