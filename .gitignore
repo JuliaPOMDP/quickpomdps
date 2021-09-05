@@ -102,5 +102,10 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# julia
 tests/Manifest.toml
 tests/Project.toml
+
+# poetry
+poetry.lcok
