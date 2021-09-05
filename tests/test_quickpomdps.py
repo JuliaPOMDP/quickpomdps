@@ -5,11 +5,28 @@ from julia import Pkg
 Pkg.activate("./tests")
 Pkg.instantiate()
 
-from quickpomdps import *
+import quickpomdps
+
 from julia.POMDPs import solve, pdf
 from julia.QMDP import QMDPSolver
 from julia.POMDPSimulators import stepthrough
 from julia.POMDPPolicies import alphavectors
+
+def test_basics():
+    def T(s, a, sp):
+        return s == sp
+
+    def Z(a, sp, o):
+        return 0.5
+
+    def R(s, a):
+        return -1.0
+
+    S = ['l', 'r']
+    A = ['l', 'r']
+    O = ['l', 'r']
+    γ = 0.95
+    prob = quickpomdps.DiscreteExplicitPOMDP(S, A, O, T, Z, R, γ)
 
 # Tiger POMDP from Kaelbling et al. 98 (http://www.sciencedirect.com/science/article/pii/S000437029800023X)
 def test_tiger():
@@ -42,7 +59,7 @@ def test_tiger():
         else: # the tiger was escaped
             return 10.0
 
-    m = DiscreteExplicitPOMDP(S,A,O,T,Z,R,γ)
+    m = quickpomdps.DiscreteExplicitPOMDP(S,A,O,T,Z,R,γ)
 
     solver = QMDPSolver()
     policy = solve(solver, m)

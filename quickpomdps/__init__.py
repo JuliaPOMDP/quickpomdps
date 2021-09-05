@@ -1,7 +1,7 @@
 import os
-import subprocess
-import sys
 
+import julia
+julia.install()
 from julia import Main
 
 script_dir = os.path.dirname(os.path.realpath(__file__))
@@ -12,7 +12,6 @@ try:
                                    QuickMDP,
                                    QuickPOMDP,
                                    MissingQuickArgument)
-    from julia import POMDPs
 
 except Exception as e:
     print(e)
@@ -26,4 +25,5 @@ def install():
     """
     Install Julia packages required for quickpomdps
     """
-    subprocess.check_call(['julia', os.path.join(script_dir, 'install.jl')])
+    from julia import Pkg
+    Pkg.instantiate(".")
