@@ -26,4 +26,7 @@ def install():
     Install Julia packages required for quickpomdps
     """
     from julia import Pkg
-    Pkg.instantiate(".")
+    Pkg.add("POMDPs")
+    Pkg.add("POMDPSimulators")
+    Pkg.add("POMDPPolicies")
+    Pkg.add("QuickPOMDPs")

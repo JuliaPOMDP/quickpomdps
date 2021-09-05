@@ -1,11 +1,9 @@
-import julia
-julia.install()
+import quickpomdps
+quickpomdps.install()
 
 from julia import Pkg
-Pkg.activate("./tests")
-Pkg.instantiate()
-
-import quickpomdps
+Pkg.activate("./tests/")
+Pkg.add("QMDP")
 
 from julia.POMDPs import solve, pdf
 from julia.QMDP import QMDPSolver
