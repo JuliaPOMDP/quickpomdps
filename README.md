@@ -22,14 +22,10 @@ or via one of the may [ways supported by poetry](https://python-poetry.org/docs/
 
 Using `quickpomdps` requires that Julia is installed and in the `PATH`.
 To install Julia, download a generic binary from [the JuliaLang site](https://julialang.org/downloads/) and add it to your `PATH`.
-To install basic Julia packages required for `quickpomdps`, open a Python interpreter and run:
 
-```python
->>> import quickpomdps
->>> quickpomdps.install()
-```
-
-Please note that these commands will install the Julia dependencies in your *global* environment by default. If you want to install these dependencies to a local environment instead, export the `JULIA_PROJECT` with the desired path as documented [here](https://docs.julialang.org/en/v1/manual/environment-variables/#JULIA_PROJECT).
+Upon invocation of `import quickpomds` in Python, all Julia dependencies will be installed if they are not already present.
+Please note that, by default, the Julia dependencies are added to the *global* environment by default.
+If you want to install these dependencies to a local environment instead, export the `JULIA_PROJECT` with the desired path as documented [here](https://docs.julialang.org/en/v1/manual/environment-variables/#JULIA_PROJECT).
 
 ## Usage
 
