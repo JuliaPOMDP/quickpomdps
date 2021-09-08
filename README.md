@@ -17,9 +17,9 @@ Using `quickpomdps` requires that Julia is installed and in the `PATH`.
 To install Julia, download a generic binary from [the JuliaLang site](https://julialang.org/downloads/) and add it to your `PATH`.
 
 Upon invocation of `import quickpomds` in Python, all Julia dependencies will be installed if they are not already present.
-Please note that, by default, the Julia dependencies are added to the *global* environment by default.
+Please note that, by default, the Julia dependencies are added to the *global* environment.
 If you want to install these dependencies to a local environment instead, export the `JULIA_PROJECT` with the desired path as documented [here](https://docs.julialang.org/en/v1/manual/environment-variables/#JULIA_PROJECT).
 
 ## Usage
 
-See [`examples/`](examples/).
+See [`tests/`](tests/).
