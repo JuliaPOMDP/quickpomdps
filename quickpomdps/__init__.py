@@ -1,6 +1,9 @@
 import os
 
+
 import julia
+from julia.api import Julia
+jl = Julia(compiled_modules=False)
 
 julia.install()
 from julia import Main
