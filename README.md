@@ -22,4 +22,4 @@ If you want to install these dependencies to a local environment instead, export
 
 ## Usage
 
-See [`tests/`](tests/).
+See [`examples/`](examples/) and [`tests/`](tests/).

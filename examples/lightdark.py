@@ -1,13 +1,25 @@
-# TODO proper imports (Deterministic from POMDPModelTools, Normal from Distributions
+from quickpomdps import QuickPOMDP
+
+from julia import Pkg
+Pkg.add("QMDP")
+Pkg.add("POMDPSimulators")
+
+from julia.Main import Float64
+from julia.POMDPs import solve, pdf
+from julia.QMDP import QMDPSolver
+from julia.POMDPSimulators import stepthrough
+from julia.POMDPPolicies import alphavectors
+from julia.POMDPModelTools import Uniform, Deterministic
+from julia.Distributions import Normal
 
 r = 60
 light_loc = 10
 
 def transition(s, a):
     if a == 0:
-        return Deterministic(r+2)
-    else
-        return Deterministic(min(max(s+a, -r), r)))
+        return Deterministic(r+1)
+    else:
+        return Deterministic(min(max(s+a, -r), r))
 
 def observation(s, a, sp):
     return Normal(sp, abs(sp - light_loc) + 0.0001)
@@ -19,7 +31,7 @@ def reward(s, a, sp):
         return -1.0
 
 m = QuickPOMDP(
-    states = range(-r, r+1),
+    states = range(-r, r+2),
     actions = [-10, -1, 0, 1, 10],
     discount = 0.95,
     isterminal = lambda s: s < -r or s > r,
@@ -42,7 +54,6 @@ print()
 rsum = 0.0
 for step in stepthrough(m, policy, max_steps=10):
     print('s:', step.s)
-    print('b:', [pdf(step.b, x) for x in S])
     print('a:', step.a)
     print('o:', step.o, '\n')
     rsum += step.r

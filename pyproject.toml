@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "quickpomdps"
-version = "0.0.1"
+version = "0.1.0"
 description = "Describing and Solving POMDPs in Python"
 authors = ["rejuvyesh <mail@rejuvyesh.com>"]
 license = "MIT"
@@ -15,7 +15,6 @@ pytest-cov = "^2.12.1"
 
 [tool.pytest.ini_options]
 addopts = "--cov=quickpomdps"
-
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
