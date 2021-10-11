@@ -3,6 +3,9 @@ from quickpomdps import QuickPOMDP
 from julia import Pkg
 Pkg.add("QMDP")
 Pkg.add("POMDPSimulators")
+Pkg.add("POMDPPolicies")
+Pkg.add("POMDPModelTools")
+Pkg.add("Distributions")
 
 from julia.Main import Float64
 from julia.POMDPs import solve, pdf

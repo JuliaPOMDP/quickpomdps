@@ -13,12 +13,7 @@ def install_julia_dependencies():
     from julia import Pkg
 
     Pkg.add("PyCall")
-    Pkg.add("POMDPs")
-    Pkg.add("POMDPSimulators")
-    Pkg.add("POMDPPolicies")
     Pkg.add("QuickPOMDPs")
-    Pkg.add("POMDPModelTools")
-    Pkg.add("Distributions")
 
 install_julia_dependencies()
 
