@@ -23,3 +23,7 @@ If you want to install these dependencies to a local environment instead, export
 ## Usage
 
 See [`examples/`](examples/) and [`tests/`](tests/).
+
+## Help
+
+If you need help, please ask on the [POMDPs.jl discussions page](https://github.com/JuliaPOMDP/POMDPs.jl/discussions)!
