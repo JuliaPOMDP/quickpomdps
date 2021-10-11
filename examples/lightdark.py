@@ -1,3 +1,4 @@
+# The Light-Dark problem from https://arxiv.org/pdf/1709.06196.pdf
 from quickpomdps import QuickPOMDP
 
 from julia import Pkg
