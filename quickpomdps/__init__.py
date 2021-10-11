@@ -17,7 +17,8 @@ def install_julia_dependencies():
     Pkg.add("POMDPSimulators")
     Pkg.add("POMDPPolicies")
     Pkg.add("QuickPOMDPs")
-
+    Pkg.add("POMDPModelTools")
+    Pkg.add("Distributions")
 
 install_julia_dependencies()
 
