@@ -3,8 +3,6 @@ module PyQuickPOMDPs
 using PyCall
 inspect = pyimport("inspect")
 
-import Tricks
-
 import QuickPOMDPs
 
 function QuickPOMDPs.preprocess(v::PyObject)
