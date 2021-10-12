@@ -2,8 +2,10 @@
 name = "quickpomdps"
 version = "0.1.0"
 description = "Describing and Solving POMDPs in Python"
-authors = ["rejuvyesh <mail@rejuvyesh.com>"]
+authors = ["rejuvyesh <mail@rejuvyesh.com>", "Zachary Sunberg <sunbergzach@gmail.com>", "Lasse Peters <lasse.peters@mailbox.org>"]
 license = "MIT"
+readme = "README.md"
+repository = "https://github.com/JuliaPOMDP/quickpomdps/"
 
 [tool.poetry.dependencies]
 python = "^3.7"
