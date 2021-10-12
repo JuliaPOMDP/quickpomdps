@@ -28,7 +28,7 @@ If you want to install these dependencies to a local environment instead, export
 
 ## Usage
 
-See [`examples/`](examples/) and [`tests/`](tests/).
+See [`examples/`](examples/) and [`tests/`](tests/). Documentation can be found at the [QuickPOMDPs.jl](https://github.com/JuliaPOMDP/QuickPOMDPs.jl) and [POMDPs.jl](https://github.com/JuliaPOMDP/POMDPs.jl/blob/master/README.md) packages.
 
 ## Help
 
