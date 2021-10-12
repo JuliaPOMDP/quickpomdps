@@ -10,13 +10,9 @@ You can use any of the solvers in [POMDPs.jl](https://github.com/JuliaPOMDP/POMD
 
 ## Installation
 
-This package uses [python-poetry](https://python-poetry.org/) for dependency
-management. Thus, it may be installed via one of the may [ways supported by poetry](https://python-poetry.org/docs/cli/#add), for example,
+Should be as easy as any other python package:
 ```bash
-git clone https://github.com/JuliaPOMDP/quickpomdps
-cd quickpomdps
-poetry install
-poetry run python examples/lightdark.py
+pip install quickpomdps
 ```
 
 Using `quickpomdps` requires that Julia is installed and in the `PATH`.
@@ -25,6 +21,18 @@ To install Julia, download a generic binary from [the JuliaLang site](https://ju
 Upon invocation of `import quickpomds` in Python, all Julia dependencies will be installed if they are not already present.
 Please note that, by default, the Julia dependencies are added to the *global* environment.
 If you want to install these dependencies to a local environment instead, export the `JULIA_PROJECT` with the desired path as documented [here](https://docs.julialang.org/en/v1/manual/environment-variables/#JULIA_PROJECT).
+
+
+## Development
+
+This package uses [python-poetry](https://python-poetry.org/) for dependency
+management. Thus, it may be installed via one of the may [ways supported by poetry](https://python-poetry.org/docs/cli/#add), for example,
+```bash
+git clone https://github.com/JuliaPOMDP/quickpomdps
+cd quickpomdps
+poetry install
+poetry run python examples/lightdark.py
+```
 
 ## Usage
 
