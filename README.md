@@ -13,8 +13,10 @@ You can use any of the solvers in [POMDPs.jl](https://github.com/JuliaPOMDP/POMD
 This package uses [python-poetry](https://python-poetry.org/) for dependency
 management. Thus, it may be installed via one of the may [ways supported by poetry](https://python-poetry.org/docs/cli/#add), for example,
 ```bash
-poetry new .
-poetry add git+https://github.com/JuliaPOMDP/quickpomdps
+git clone https://github.com/JuliaPOMDP/quickpomdps
+cd quickpomdps
+poetry install
+poetry run python examples/lightdark.py
 ```
 
 Using `quickpomdps` requires that Julia is installed and in the `PATH`.
