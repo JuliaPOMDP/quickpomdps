@@ -1,12 +1,7 @@
 from quickpomdps import DiscreteExplicitPOMDP, QuickPOMDP
 
 from julia import Pkg
-Pkg.add("POMDPs")
-Pkg.add("POMDPSimulators")
-Pkg.add("POMDPPolicies")
-Pkg.add("POMDPModelTools")
-Pkg.add("Distributions")
-Pkg.add("QMDP")
+Pkg.add(["POMDPs", "POMDPSimulators", "POMDPPolicies", "POMDPModelTools", "Distributions", "QMDP"])
 
 from julia.QuickPOMDPs import preprocess
 from julia import Main
