@@ -2,14 +2,12 @@
 from quickpomdps import QuickPOMDP
 
 from julia import Pkg
-Pkg.add(["POMDPs", "POMDPSimulators", "POMDPPolicies", "POMDPModelTools", "Distributions", "QMDP"])
+Pkg.add(["POMDPs", "POMDPTools", "Distributions", "QMDP"])
 
 from julia.Main import Float64
 from julia.POMDPs import solve, pdf
 from julia.QMDP import QMDPSolver
-from julia.POMDPSimulators import stepthrough
-from julia.POMDPPolicies import alphavectors
-from julia.POMDPModelTools import Uniform, Deterministic
+from julia.POMDPTools import stepthrough, alphavectors, Uniform, Deterministic
 from julia.Distributions import Normal
 
 r = 60
