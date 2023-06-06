@@ -8,7 +8,7 @@
 `quickpomdps` is a package to quickly define [[PO]MDPs](https://en.wikipedia.org/wiki/Partially_observable_Markov_decision_process) in Python.
 You can use any of the solvers in [POMDPs.jl](https://github.com/JuliaPOMDP/POMDPs.jl) ecosystem, directly in Python.
 
-A hybrid continuous-discrete light-dark problem definition (taken from [`examples/lightdark.py`](examples/lightdark.py) looks like this:
+A hybrid continuous-discrete light-dark problem definition and QMDP solution (taken from [`examples/lightdark.py`](examples/lightdark.py)) looks like this:
 ```python
 r = 60
 light_loc = 10
@@ -39,6 +39,9 @@ m = QuickPOMDP(
     reward = reward,
     initialstate = Uniform(range(-r//2, r//2+1))
 )
+
+solver = QMDPSolver()
+policy = solve(solver, m)
 ```
 
 ## Installation
