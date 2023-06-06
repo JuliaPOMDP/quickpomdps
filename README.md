@@ -8,15 +8,45 @@
 `quickpomdps` is a package to quickly define [[PO]MDPs](https://en.wikipedia.org/wiki/Partially_observable_Markov_decision_process) in Python.
 You can use any of the solvers in [POMDPs.jl](https://github.com/JuliaPOMDP/POMDPs.jl) ecosystem, directly in Python.
 
+A hybrid continuous-discrete light-dark problem definition (taken from [`examples/lightdark.py`](examples/lightdark.py) looks like this:
+```python
+r = 60
+light_loc = 10
+
+def transition(s, a):
+    if a == 0:
+        return Deterministic(r+1)
+    else:
+        return Deterministic(min(max(s+a, -r), r))
+
+def observation(s, a, sp):
+    return Normal(sp, abs(sp - light_loc) + 0.0001)
+
+def reward(s, a, sp):
+    if a == 0:
+        return 100.0 if s == 0 else -100.0
+    else:
+        return -1.0
+
+m = QuickPOMDP(
+    states = range(-r, r+2),
+    actions = [-10, -1, 0, 1, 10],
+    discount = 0.95,
+    isterminal = lambda s: s < -r or s > r,
+    obstype = Float64,
+    transition = transition,
+    observation = observation,
+    reward = reward,
+    initialstate = Uniform(range(-r//2, r//2+1))
+)
+```
+
 ## Installation
 
-Should be as easy as any other python package:
 ```bash
 pip install quickpomdps
 ```
-
-Using `quickpomdps` requires that Julia is installed and in the `PATH`.
-To install Julia, download a generic binary from [the JuliaLang site](https://julialang.org/downloads/) and add it to your `PATH`.
+`quickpomdps` uses the [pyjulia package](https://github.com/JuliaPy/pyjulia) which requires julia to be installed. We recommend using [juliaup](https://github.com/JuliaLang/juliaup) for this purpose.
 
 Upon invocation of `import quickpomds` in Python, all Julia dependencies will be installed if they are not already present.
 Please note that, by default, the Julia dependencies are added to the *global* environment.
