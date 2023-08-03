@@ -23,8 +23,9 @@ except Exception as ex:
     install_julia_dependencies()
     print('done!')
 
+from julia import Main
 script_dir = os.path.dirname(os.path.realpath(__file__))
-julia.Main.include(os.path.join(script_dir, "setup.jl"))
+Main.include(os.path.join(script_dir, "setup.jl"))
 from julia.QuickPOMDPs import (
     DiscreteExplicitPOMDP,
     DiscreteExplicitMDP,
