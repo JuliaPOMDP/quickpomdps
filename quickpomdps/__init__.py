@@ -2,10 +2,6 @@ import os
 
 import julia
 
-julia.install()
-from julia import Main
-
-
 def install_julia_dependencies():
     """
     Install Julia packages required for quickpomdps
@@ -14,8 +10,20 @@ def install_julia_dependencies():
 
     Pkg.add(["PyCall","QuickPOMDPs"])
 
-install_julia_dependencies()
+try:
+    from julia import QuickPOMDPs
+except Exception as ex:
+    print('Could not load the QuickPOMDPs Julia package.')
+    print('Caught the following exception:')
+    print(ex)
+    if isinstance(ex, julia.core.UnsupportedPythonError):
+        print('Running julia.install()')
+        julia.install()
+    print('Running quickpomdps.install_julia_dependencies()')
+    install_julia_dependencies()
+    print('done!')
 
+from julia import Main
 script_dir = os.path.dirname(os.path.realpath(__file__))
 Main.include(os.path.join(script_dir, "setup.jl"))
 from julia.QuickPOMDPs import (
