@@ -13,7 +13,7 @@ def install_julia_dependencies():
 try:
     from julia import QuickPOMDPs
 except Exception as ex:
-    print('Could not load QuickPOMDPs Julia package.')
+    print('Could not load the QuickPOMDPs Julia package.')
     print('Caught the following exception:')
     print(ex)
     if isinstance(ex, julia.core.UnsupportedPythonError):

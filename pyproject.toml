@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "quickpomdps"
-version = "0.1.1"
+version = "0.1.2"
 description = "Describing and Solving POMDPs in Python"
 authors = ["rejuvyesh <mail@rejuvyesh.com>", "Zachary Sunberg <sunbergzach@gmail.com>", "Lasse Peters <lasse.peters@mailbox.org>"]
 license = "MIT"
